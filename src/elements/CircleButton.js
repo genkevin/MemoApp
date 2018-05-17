@@ -7,7 +7,7 @@ import fontAwesome from '../../assets/fonts/fontawesome-webfont.ttf';
 class CircleButton extends React.Component {
   state = {
     fontLoaded: false,
-  }
+  };
 
   async componentWillMount() {
     await Font.loadAsync({
@@ -26,14 +26,15 @@ class CircleButton extends React.Component {
       bgColor = '#fff';
       textColor = '#E31676';
     }
+
     return (
       <View style={[styles.circleButton, style, { backgroundColor: bgColor }]}>
         {
-          this.state.fontLoaded ? [
+          this.state.fontLoaded ? (
             <Text style={[styles.circleButtonTitle, { color: textColor }]}>
-              {'\uf040'}
-            </Text>,
-          ] : null
+              {this.props.children}
+            </Text>
+          ) : null
         }
       </View>
     );
@@ -42,7 +43,6 @@ class CircleButton extends React.Component {
 
 const styles = StyleSheet.create({
   circleButton: {
-    fontFamily: 'FontAwesome',
     position: 'absolute',
     bottom: 32,
     right: 32,
@@ -57,8 +57,9 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
   },
   circleButtonTitle: {
-    fontSize: 32,
-    lineHeight: 32,
+    fontFamily: 'FontAwesome',
+    fontSize: 28,
+    lineHeight: 28,
     color: '#fff',
   },
 });
