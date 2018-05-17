@@ -3,8 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import Appbar from './src/components/Appbar';
 import MemoList from './src/components/MemoList';
-import CircleButton from '.src/elements/CircleButton';
-
+import CircleButton from './src/elements/CircleButton';
 
 export default class App extends React.Component {
   render() {
